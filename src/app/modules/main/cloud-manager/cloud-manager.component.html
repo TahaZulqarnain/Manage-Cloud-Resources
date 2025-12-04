@@ -1,0 +1,47 @@
+<div class="cloud-manager-container">
+  <div class="content-wrapper">
+    <!-- Form Section -->
+    <div class="form-section">
+      <div class="section-header">
+        <h2>Resource Configuration</h2>
+        <div class="action-buttons">
+          <button class="btn btn-primary" (click)="addVNet()" type="button">
+            <span class="icon material-symbols-outlined">add</span> Add VNet
+          </button>
+          <button class="btn btn-success" (click)="onSubmit()" type="button" [disabled]="!isFormValid">
+            <span class="icon material-symbols-outlined">check</span> Submit
+          </button>
+          <button class="btn btn-info" (click)="exportJSON()" type="button">
+            <span class="icon material-symbols-outlined">download</span> Export JSON
+          </button>
+        </div>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div formArrayName="vnets" class="vnets-container">
+          <div *ngFor="let v of vnets.controls; let i = index" class="vnet-wrapper">
+            <app-vnet [group]="$any(v)" [index]="i" (remove)="removeVNet(i)"></app-vnet>
+          </div>
+
+          <div *ngIf="vnets.length === 0" class="empty-state">
+            <p>No Virtual Networks configured. Click "Add VNet" to get started.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Visualization Section -->
+    <div class="visualization-section">
+      <div class="section-header">
+        <h2>Network Diagram</h2>
+        <p class="diagram-info">Visual representation of your cloud resource hierarchy</p>
+      </div>
+      <div class="network-diagram-container">
+        <div #networkContainer class="network-canvas"></div>
+        <div *ngIf="vnets.length === 0" class="empty-visualization">
+          <p>Add resources to see the network diagram</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

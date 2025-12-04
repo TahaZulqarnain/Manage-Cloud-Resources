@@ -1,0 +1,94 @@
+.app-header {
+  background: linear-gradient(135deg, #240d83 0%, #3d1fa3 100%);
+  color: white;
+  padding: 0;
+  box-shadow: 0 4px 15px rgba(36, 13, 131, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+
+  .header-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      padding: 15px 20px;
+    }
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .logo {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      //background: rgba(255, 255, 255, 0.1);
+      padding: 5px;
+    }
+
+    .logo-text {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .logo-icon {
+        font-size: 32px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      }
+
+      .logo-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .nav-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+
+    @media (max-width: 768px) {
+      align-items: center;
+      text-align: center;
+    }
+
+    .app-title {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      letter-spacing: 0.5px;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+
+    .app-subtitle {
+      margin: 5px 0 0 0;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+  }
+}
+

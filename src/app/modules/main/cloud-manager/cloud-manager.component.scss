@@ -1,0 +1,187 @@
+@import '../../../shared/styles/variables';
+
+.cloud-manager-container {
+  padding: $spacing-4xl $spacing-3xl;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: $bg-primary;
+  min-height: calc(100vh - 200px);
+
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-3xl;
+    margin-top: $spacing-3xl;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-section {
+    background: $bg-secondary;
+    border-radius: $radius-xl;
+    padding: $spacing-3xl;
+    box-shadow: 0 2px 10px $shadow-sm;
+  }
+
+  .visualization-section {
+    background: $bg-secondary;
+    border-radius: $radius-xl;
+    padding: $spacing-3xl;
+    box-shadow: 0 2px 10px $shadow-sm;
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    transition: all $transition-base;
+
+    @media (max-width: 1200px) {
+      position: relative;
+      top: 0;
+      max-height: none;
+    }
+
+    // Custom scrollbar for the sticky section
+    &::-webkit-scrollbar {
+      width: $spacing-md;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $gray-200;
+      border-radius: $radius-sm;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $primary-color;
+      border-radius: $radius-sm;
+
+      &:hover {
+        background: $primary-light;
+      }
+    }
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-3xl;
+    padding-bottom: $spacing-2xl;
+    border-bottom: 2px solid $bg-dark;
+
+    h2 {
+      margin: 0;
+      color: $text-secondary;
+      font-size: $font-4xl;
+    }
+
+    .diagram-info {
+      margin: $spacing-sm 0 0 0;
+      color: $text-muted;
+      font-size: $font-lg;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: $spacing-lg;
+      flex-wrap: wrap;
+    }
+  }
+
+  .btn {
+    padding: $spacing-lg $spacing-3xl;
+    border: none;
+    border-radius: $radius-md;
+    cursor: pointer;
+    font-size: $font-lg;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-md;
+    transition: all $transition-base;
+    box-shadow: 0 2px 5px $shadow-sm;
+
+    .icon {
+      font-size: $font-2xl;
+      font-weight: bold;
+    }
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px $shadow-md;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &.btn-primary {
+      background: $btn-primary-bg;
+      color: $text-light;
+    }
+
+    &.btn-success {
+      background: $btn-success-bg;
+      color: $text-light;
+    }
+
+    &.btn-info {
+      background: $btn-info-bg;
+      color: $text-light;
+    }
+  }
+
+  .vnets-container {
+    .vnet-wrapper {
+      margin-bottom: $spacing-3xl;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px;
+      color: $text-muted;
+      background: $bg-light;
+      border-radius: $radius-lg;
+      border: 2px dashed $border-light;
+
+      p {
+        margin: 0;
+        font-size: $font-xl;
+      }
+    }
+  }
+
+  .network-diagram-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 280px);
+    min-height: 500px;
+    max-height: 800px;
+    border: 2px solid $bg-dark;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    background: $gray-50;
+
+    .network-canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .empty-visualization {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: $text-muted;
+
+      p {
+        margin: 0;
+        font-size: $font-xl;
+      }
+    }
+  }
+}

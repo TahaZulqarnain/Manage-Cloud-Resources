@@ -1,0 +1,128 @@
+// Color Variables
+// Primary Colors
+$primary-color: #240d83;
+$primary-dark: #1a0a5c;
+$primary-light: #3d1fa3;
+$primary-gradient: linear-gradient(135deg, #240d83 0%, #3d1fa3 100%);
+
+// Secondary Colors
+$secondary-color: #3d1fa3;
+$secondary-dark: #240d83;
+$secondary-light: #5a3fc7;
+
+// Success Colors
+$success-color: #28a745;
+$success-dark: #1e7e34;
+$success-light: #34ce57;
+$success-hover: #218838;
+
+// Danger Colors
+$danger-color: #dc3545;
+$danger-dark: #c82333;
+$danger-light: #e4606d;
+
+// Info Colors
+$info-color: #17a2b8;
+$info-dark: #138496;
+$info-light: #20c9e7;
+
+// Warning Colors
+$warning-color: #ffc107;
+$warning-dark: #e0a800;
+$warning-light: #ffcd39;
+
+// Neutral Colors
+$white: #ffffff;
+$black: #000000;
+$gray-50: #fafbfc;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// Text Colors
+$text-primary: #333;
+$text-secondary: #495057;
+$text-muted: #6c757d;
+$text-light: #ffffff;
+
+// Border Colors
+$border-color: #ddd;
+$border-light: #dee2e6;
+$border-dark: #eee;
+
+// Background Colors
+$bg-primary: #f5f7fa;
+$bg-secondary: #ffffff;
+$bg-light: #f8f9fa;
+$bg-dark: #e9ecef;
+
+// Focus Colors
+$focus-color: #2575fc;
+$focus-shadow: rgba(37, 117, 252, 0.2);
+$focus-primary-shadow: rgba(36, 13, 131, 0.2);
+$focus-success-shadow: rgba(40, 167, 69, 0.2);
+
+// Button Colors
+$btn-primary-bg: #240d83;
+$btn-success-bg: #11998e;
+$btn-info-bg: #ec6ead;
+$btn-danger-bg: #dc3545;
+$btn-add-bg: #28a745;
+$btn-add-hover: #218838;
+$btn-tag-bg: #17a2b8;
+$btn-tag-hover: #138496;
+
+// Validation Colors
+$valid-color: #28a745;
+$invalid-color: #dc3545;
+
+// Badge Colors
+$badge-bg: #6c757d;
+
+// Overlay Colors
+$overlay-light: rgba(255, 255, 255, 0.2);
+$overlay-medium: rgba(255, 255, 255, 0.3);
+
+// Shadow Colors
+$shadow-sm: rgba(0, 0, 0, 0.1);
+$shadow-md: rgba(0, 0, 0, 0.2);
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 6px;
+$spacing-md: 8px;
+$spacing-lg: 10px;
+$spacing-xl: 12px;
+$spacing-2xl: 15px;
+$spacing-3xl: 20px;
+$spacing-4xl: 30px;
+
+// Border Radius
+$radius-sm: 4px;
+$radius-md: 6px;
+$radius-lg: 8px;
+$radius-xl: 10px;
+$radius-full: 50%;
+
+// Font Sizes
+$font-xs: 10px;
+$font-sm: 11px;
+$font-md: 12px;
+$font-base: 13px;
+$font-lg: 14px;
+$font-xl: 16px;
+$font-2xl: 18px;
+$font-3xl: 20px;
+$font-4xl: 24px;
+
+// Transitions
+$transition-fast: 0.2s;
+$transition-base: 0.3s;
+$transition-slow: 0.5s;
+

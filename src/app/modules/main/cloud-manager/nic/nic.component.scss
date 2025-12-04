@@ -1,0 +1,202 @@
+@import '../../../../shared/styles/variables';
+
+.nic-card {
+  background: $white;
+  border-radius: $radius-md;
+  border: 2px solid $success-color;
+  margin-bottom: $spacing-lg;
+  overflow: hidden;
+
+  .nic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-lg $spacing-xl;
+    background: linear-gradient(135deg, $success-color 0%, $success-dark 100%);
+    color: $text-light;
+
+    .nic-title {
+      h5 {
+        margin: 0;
+        font-size: $font-lg;
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+
+        .validation-status {
+          width: 16px;
+          height: 16px;
+          border-radius: $radius-full;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: $font-xs;
+
+          &.valid {
+            background: $white;
+            color: $success-color;
+          }
+
+          &.invalid {
+            background: $invalid-color;
+            color: $text-light;
+          }
+        }
+      }
+    }
+
+    .btn-remove {
+      background: $overlay-light;
+      border: none;
+      color: $text-light;
+      width: 24px;
+      height: 24px;
+      border-radius: $radius-full;
+      cursor: pointer;
+      font-size: $font-2xl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background $transition-base;
+
+      &:hover {
+        background: $overlay-medium;
+      }
+    }
+  }
+
+  .nic-body {
+    padding: $spacing-xl;
+
+    .form-group {
+      margin-bottom: $spacing-xl;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-xs;
+        font-weight: 600;
+        color: $text-primary;
+        font-size: $font-base;
+
+        .label-icon {
+          font-size: $font-base;
+        }
+
+        .required {
+          color: $invalid-color;
+        }
+      }
+
+      .form-control {
+        width: 100%;
+        padding: $spacing-sm $spacing-lg;
+        border: 1px solid $border-color;
+        border-radius: $radius-sm;
+        font-size: $font-base;
+
+        &:focus {
+          outline: none;
+          border-color: $success-color;
+          box-shadow: 0 0 0 2px $focus-success-shadow;
+        }
+
+        &.readonly {
+          background-color: $bg-dark;
+          cursor: not-allowed;
+        }
+
+        &.is-invalid {
+          border-color: $invalid-color;
+        }
+      }
+
+      .invalid-feedback {
+        color: $invalid-color;
+        font-size: $font-sm;
+        margin-top: $spacing-xs;
+      }
+    }
+  }
+
+  .tags-section {
+    margin-top: $spacing-xl;
+    padding-top: $spacing-xl;
+    border-top: 1px solid $border-light;
+
+    .section-title {
+      margin-bottom: $spacing-md;
+
+      h6 {
+        margin: 0;
+        color: $text-secondary;
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        font-size: $font-base;
+      }
+    }
+
+    .tags-container {
+      .tag-item {
+        display: flex;
+        gap: $spacing-sm;
+        margin-bottom: $spacing-sm;
+        align-items: center;
+
+        .tag-key,
+        .tag-value {
+          flex: 1;
+          padding: $spacing-sm $spacing-md;
+          border: 1px solid $border-color;
+          border-radius: $radius-sm;
+          font-size: $font-md;
+
+          &:focus {
+            outline: none;
+            border-color: $success-color;
+            box-shadow: 0 0 0 2px $focus-success-shadow;
+          }
+        }
+
+        .btn-remove-tag {
+          background: $danger-color;
+          color: $text-light;
+          border: none;
+          width: 24px;
+          height: 24px;
+          border-radius: $radius-sm;
+          cursor: pointer;
+          font-size: $font-lg;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background $transition-base;
+
+          &:hover {
+            background: $danger-dark;
+          }
+        }
+      }
+
+      .btn-add-tag {
+        background: $btn-tag-bg;
+        color: $text-light;
+        border: none;
+        padding: $spacing-sm $spacing-lg;
+        border-radius: $radius-sm;
+        cursor: pointer;
+        font-size: $font-md;
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-xs;
+        transition: background $transition-base;
+
+        &:hover {
+          background: $btn-tag-hover;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import '../../styles/variables';
+
+.tags-section {
+  width: 100%;
+  margin-top: $spacing-3xl;
+  padding-top: $spacing-3xl;
+  border-top: 1px solid $border-dark;
+
+  .section-title {
+    margin-bottom: $spacing-2xl;
+
+    h4, h5, h6 {
+      margin: 0;
+      color: $text-secondary;
+      display: flex;
+      align-items: center;
+      gap: $spacing-lg;
+      font-size: $font-xl;
+      font-weight: 600;
+
+      &.h5 {
+        font-size: $font-lg;
+      }
+
+      &.h6 {
+        font-size: $font-base;
+      }
+
+      .icon {
+        font-size: $font-xl;
+      }
+    }
+  }
+
+  .tags-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+
+    .tag-item {
+      display: flex;
+      gap: $spacing-lg;
+      width: 100%;
+      align-items: center;
+
+      .tag-key,
+      .tag-value {
+        flex: 1;
+        min-width: 0;
+        padding: $spacing-md $spacing-xl;
+        border: 1px solid $border-color;
+        border-radius: $radius-sm;
+        font-size: $font-lg;
+        transition: border-color $transition-base, box-shadow $transition-base;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+          box-shadow: 0 0 0 2px $focus-primary-shadow;
+        }
+      }
+
+      .btn-remove-tag {
+        background: $danger-color;
+        color: $text-light;
+        border: none;
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        border-radius: $radius-sm;
+        cursor: pointer;
+        font-size: $font-2xl;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background $transition-base;
+        flex-shrink: 0;
+
+        &:hover {
+          background: $danger-dark;
+        }
+      }
+    }
+
+    .btn-add-tag {
+      background: $btn-tag-bg;
+      color: $text-light;
+      border: none;
+      padding: $spacing-md $spacing-xl;
+      border-radius: $radius-sm;
+      cursor: pointer;
+      font-size: $font-lg;
+      display: inline-flex;
+      align-items: center;
+      gap: $spacing-sm;
+      transition: background $transition-base;
+      align-self: flex-start;
+      margin-top: $spacing-xs;
+
+      &:hover {
+        background: $btn-tag-hover;
+      }
+    }
+  }
+}

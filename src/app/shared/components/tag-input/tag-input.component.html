@@ -1,0 +1,25 @@
+<div class="tags-section">
+  <div class="section-title" *ngIf="showTitle">
+    <ng-container [ngSwitch]="titleLevel">
+      <h4 *ngSwitchCase="'h4'">
+        {{ title }}
+      </h4>
+      <h5 *ngSwitchCase="'h5'">
+        {{ title }}
+      </h5>
+      <h6 *ngSwitchCase="'h6'">
+        {{ title }}
+      </h6>
+    </ng-container>
+  </div>
+  <div class="tags-container">
+    <div *ngFor="let t of tagsFormArray.controls; let ti=index" [formGroup]="getTagGroup(ti)" class="tag-item">
+      <input formControlName="key" placeholder="Key" class="tag-key" type="text">
+      <input formControlName="value" placeholder="Value" class="tag-value" type="text">
+      <button class="btn-remove-tag" (click)="removeTag(ti)" type="button" title="Remove tag">×</button>
+    </div>
+    <button class="btn-add-tag" (click)="addTag()" type="button">
+      <span>+</span> Add Tag
+    </button>
+  </div>
+</div>

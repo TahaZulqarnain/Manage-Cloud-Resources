@@ -1,0 +1,85 @@
+<div class="vnet-card" [formGroup]="group">
+  <div class="vnet-header">
+    <div class="vnet-title">
+      <h3>
+        <span class="icon material-symbols-outlined">public</span>
+        Virtual Network {{ index !== undefined ? index + 1 : '' }}
+        <span class="validation-status" [class.valid]="group.valid" [class.invalid]="!group.valid && group.touched">
+          {{ group.valid ? '✓' : '✗' }}
+        </span>
+      </h3>
+    </div>
+    <button class="btn-remove" (click)="onRemove()" type="button" title="Remove VNet">
+      ×
+    </button>
+  </div>
+
+  <div class="vnet-body">
+    <div class="form-group">
+      <label>
+        Resource Name <span class="required">*</span>
+      </label>
+      <input 
+        formControlName="name" 
+        placeholder="Enter VNet name"
+        class="form-control"
+        [class.is-invalid]="isNameInvalid"
+        type="text">
+      <div class="invalid-feedback" *ngIf="isNameInvalid">
+        Resource name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>
+        Resource Type
+      </label>
+      <input 
+        formControlName="type" 
+        placeholder="VNet"
+        class="form-control readonly"
+        readonly
+        type="text">
+    </div>
+
+    <app-tag-input 
+      [tagsFormArray]="tags" 
+      [showTitle]="true"
+      title="Tags"
+      titleLevel="h4">
+    </app-tag-input>
+
+    <div class="subnets-section">
+      <div class="section-title">
+        <h4>
+          <span class="icon material-symbols-outlined">hub</span>
+          Subnets
+          <span class="badge">{{ subnetCount }}</span>
+        </h4>
+      </div>
+      <div formArrayName="subnets" class="subnets-container">
+        <div *ngFor="let s of subnets.controls; let si=index" [formGroupName]="si" class="subnet-item-wrapper">
+          <app-subnet [group]="$any(s)" [index]="si" (remove)="removeSubnet(si)"></app-subnet>
+        </div>
+        <div class="add-section">
+          <button class="btn-add" (click)="addSubnet()" type="button">
+            <span>+</span> Add Subnet
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vnet-footer">
+    <div class="summary">
+      <span>
+        <span class="icon material-symbols-outlined">hub</span>
+        {{ subnetCount }} Subnet{{ subnetCount !== 1 ? 's' : '' }}
+      </span>
+      <span>
+        <span class="icon material-symbols-outlined">cable</span>
+        {{ totalNicCount }} NIC{{ totalNicCount !== 1 ? 's' : '' }}
+      </span>
+    </div>
+  </div>
+</div>

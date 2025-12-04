@@ -1,0 +1,256 @@
+@import '../../../../shared/styles/variables';
+
+.subnet-card {
+  background: $bg-light;
+  border-radius: $radius-lg;
+  border: 2px solid $primary-color;
+  margin-bottom: $spacing-2xl;
+  overflow: hidden;
+
+  .subnet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-xl $spacing-2xl;
+    background: linear-gradient(135deg, $primary-light 0%, $primary-color 100%);
+    color: $text-light;
+
+    .subnet-title {
+      h4 {
+        margin: 0;
+        font-size: $font-xl;
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+
+        .validation-status {
+          width: 18px;
+          height: 18px;
+          border-radius: $radius-full;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: $font-sm;
+
+          &.valid {
+            background: $valid-color;
+          }
+
+          &.invalid {
+            background: $invalid-color;
+          }
+        }
+      }
+    }
+
+    .btn-remove {
+      background: $overlay-light;
+      border: none;
+      color: $text-light;
+      width: 28px;
+      height: 28px;
+      border-radius: $radius-full;
+      cursor: pointer;
+      font-size: $font-3xl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background $transition-base;
+
+      &:hover {
+        background: $overlay-medium;
+      }
+    }
+  }
+
+  .subnet-body {
+    padding: $spacing-2xl;
+
+    .form-group {
+      margin-bottom: $spacing-2xl;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+        margin-bottom: $spacing-sm;
+        font-weight: 600;
+        color: $text-primary;
+        font-size: $font-lg;
+
+        .label-icon {
+          font-size: $font-lg;
+        }
+
+        .required {
+          color: $invalid-color;
+        }
+      }
+
+      .form-control {
+        width: 100%;
+        padding: $spacing-md $spacing-xl;
+        border: 1px solid $border-color;
+        border-radius: $radius-sm;
+        font-size: $font-lg;
+
+        &:focus {
+          outline: none;
+          border-color: $focus-color;
+          box-shadow: 0 0 0 2px $focus-shadow;
+        }
+
+        &.readonly {
+          background-color: $bg-dark;
+          cursor: not-allowed;
+        }
+
+        &.is-invalid {
+          border-color: $invalid-color;
+        }
+      }
+
+      .invalid-feedback {
+        color: $invalid-color;
+        font-size: $font-md;
+        margin-top: $spacing-sm;
+      }
+    }
+  }
+
+  .tags-section {
+    margin-top: $spacing-2xl;
+    padding-top: $spacing-2xl;
+    border-top: 1px solid $border-light;
+
+    .section-title {
+      margin-bottom: $spacing-lg;
+
+      h5 {
+        margin: 0;
+        color: $text-secondary;
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+        font-size: $font-lg;
+      }
+    }
+
+    .tags-container {
+      .tag-item {
+        display: flex;
+        gap: $spacing-md;
+        margin-bottom: $spacing-md;
+        align-items: center;
+
+        .tag-key,
+        .tag-value {
+          flex: 1;
+          padding: $spacing-sm $spacing-lg;
+          border: 1px solid $border-color;
+          border-radius: $radius-sm;
+          font-size: $font-base;
+
+          &:focus {
+            outline: none;
+            border-color: $primary-color;
+            box-shadow: 0 0 0 2px $focus-primary-shadow;
+          }
+        }
+
+        .btn-remove-tag {
+          background: $danger-color;
+          color: $text-light;
+          border: none;
+          width: 28px;
+          height: 28px;
+          border-radius: $radius-sm;
+          cursor: pointer;
+          font-size: $font-xl;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background $transition-base;
+
+          &:hover {
+            background: $danger-dark;
+          }
+        }
+      }
+
+      .btn-add-tag {
+        background: $btn-tag-bg;
+        color: $text-light;
+        border: none;
+        padding: $spacing-sm $spacing-xl;
+        border-radius: $radius-sm;
+        cursor: pointer;
+        font-size: $font-base;
+        display: inline-flex;
+        align-items: center;
+        gap: $spacing-sm;
+        transition: background $transition-base;
+
+        &:hover {
+          background: $btn-tag-hover;
+        }
+      }
+    }
+  }
+
+  .nics-section {
+    margin-top: $spacing-2xl;
+    padding-top: $spacing-2xl;
+    border-top: 1px solid $border-light;
+
+    .section-title {
+      margin-bottom: $spacing-lg;
+
+      h5 {
+        margin: 0;
+        color: $text-secondary;
+        display: flex;
+        align-items: center;
+        gap: $spacing-md;
+        font-size: $font-lg;
+
+        .badge {
+          background: $badge-bg;
+          color: $text-light;
+          padding: 2px $spacing-sm;
+          border-radius: $radius-xl;
+          font-size: $font-sm;
+        }
+      }
+    }
+
+    .nics-container {
+      .nic-item-wrapper {
+        margin-bottom: $spacing-lg;
+      }
+
+      .add-section {
+        text-align: center;
+        margin-top: $spacing-lg;
+
+        .btn-add {
+          background: $btn-add-bg;
+          color: $text-light;
+          border: none;
+          padding: $spacing-sm $spacing-xl;
+          border-radius: $radius-sm;
+          cursor: pointer;
+          font-size: $font-base;
+          display: inline-flex;
+          align-items: center;
+          gap: $spacing-sm;
+          transition: background $transition-base;
+
+          &:hover {
+            background: $btn-add-hover;
+          }
+        }
+      }
+    }
+  }
+}

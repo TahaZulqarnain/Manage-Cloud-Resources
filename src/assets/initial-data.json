@@ -1,0 +1,95 @@
+{
+    "vnets": [
+        {
+            "name": "VNet 1",
+            "type": "VNet",
+            "tags": [
+                {
+                    "key": "env",
+                    "value": "dev"
+                },
+                {
+                    "key": "project",
+                    "value": "cloud-resources"
+                }
+            ],
+            "subnets": [
+                {
+                    "name": "Subnet 1",
+                    "type": "Subnet",
+                    "tags": [
+                        {
+                            "key": "purpose",
+                            "value": "frontend"
+                        }
+                    ],
+                    "nics": [
+                        {
+                            "name": "NIC 1",
+                            "type": "NIC",
+                            "tags": [
+                                {
+                                    "key": "vm",
+                                    "value": "web-server-1"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "NIC 2",
+                            "type": "NIC",
+                            "tags": [
+                                {
+                                    "key": "vm",
+                                    "value": "web-server-2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Subnet 2",
+                    "type": "Subnet",
+                    "tags": [
+                        {
+                            "key": "purpose",
+                            "value": "backend"
+                        }
+                    ],
+                    "nics": [
+                        {
+                            "name": "NIC 2-1",
+                            "type": "NIC",
+                            "tags": [
+                                {
+                                    "key": "vm",
+                                    "value": "app-server-1"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "NIC 2-2",
+                            "type": "NIC",
+                            "tags": [
+                                {
+                                    "key": "vm",
+                                    "value": "app-server-2"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "NIC 2-3",
+                            "type": "NIC",
+                            "tags": [
+                                {
+                                    "key": "vm",
+                                    "value": "db-server-1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
